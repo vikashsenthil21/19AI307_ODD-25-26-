@@ -22,7 +22,6 @@ To write a java program to accept the number of days the member is late to retur
 ## PROGRAM:
 
 ```
-Program to implement a conditional statement using Java
 Developed by: Vikash s
 RegisterNumber: 212222240115
 ```
@@ -69,4 +68,5 @@ public class LibraryFine
 
 ## RESULT:
 Thus, the program to accept the number of days the member is late to return the book and display the fine is written and executed successfully.
+
 
