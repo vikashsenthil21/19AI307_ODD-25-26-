@@ -26,10 +26,8 @@ To write a Java program that reads an array from the user and prints its element
 
 ## PROGRAM:
  ```
-/*
 Developed by: Vikash s
 RegisterNumber: 212222240115 
-*/
 ```
 
 ## SOURCE CODE:
@@ -65,3 +63,4 @@ public class ReverseArray {
 
 ## RESULT:
 The program successfully reads the array elements and displays them in reverse order.
+
