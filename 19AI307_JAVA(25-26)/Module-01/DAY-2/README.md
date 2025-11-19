@@ -22,8 +22,8 @@ To write a Java program that computes the cube of a number using a cube method t
 
 ```
 Program to implement a Methods using Java
-Developed by: Sathyaa R
-RegisterNumber: 212223100052
+Developed by: Vikash s
+RegisterNumber: 212222240115
 ```
 
 ## SOURCE CODE:
@@ -58,4 +58,5 @@ public class Main
 
 ## RESULT:
 Thus, the program that computes the cube of a number using a cube method that internally calls a square method is written and executed successfully.
+
 
