@@ -23,7 +23,6 @@ To write a Java program to reverse a number using a while loop.
 ## PROGRAM:
 
 ```
-Program to implement a Looping Statement using Java
 Developed by: Vikash s
 RegisterNumber: 212222240115
 ```
@@ -60,4 +59,5 @@ public class ReverseNumber
 
 ## RESULT:
 Thus, the program to write a Java program to reverse a number using a while loop is written and executed successfully.
+
 
