@@ -1,30 +1,29 @@
-# Ex.No:1(C) LOOPING STATEMENT
+# Ex.No:2(C) ACCESS SPECIFIERS
 
 ## QUESTION:
-Write a Java program to reverse a number using a while loop.
+Write a Java program to create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.
 
 ## AIM:
-To write a Java program to reverse a number using a while loop.
+To write a Java program that defines a Rectangle class with private fields and public getters and setters.
 
 ## ALGORITHM :
-
 1.	Start the program.
-2.	Import the necessary package 'java.util'
-3.	Read an integer number from the user and store it in num.
-4.	Initialize a variable reversed to 0.
-5.	Repeat while num > 0:
-   a. Extract the last digit using digit = num % 10.
-  	b. Update reversed number: reversed = reversed * 10 + digit.
-  	c. Remove the last digit from num using num = num / 10.
-6. Display the value of reversed
-7. End the program.
+2.	Import the necessary package 'java.util' and create a Scanner object to read input.
+3.	Create a Rectangle object.
+4.	Read the length from the user and store it using setLength().
+5.	Read the width from the user and store it using setWidth().
+6.	Retrieve the stored length and width using the getter methods.
+7.	Display the length and width.
+8.	End the program.
+
 
 
 ## PROGRAM:
 
 ```
+Program to implement a Access Specifiers using Java
 Developed by: Vikash s
-RegisterNumber: 212222240115
+RegisterNumber: 212222240015
 ```
 
 ## SOURCE CODE:
@@ -32,31 +31,59 @@ RegisterNumber: 212222240115
 ```
 import java.util.Scanner;
 
-public class ReverseNumber 
+class Rectangle 
+{
+    private double length;
+    private double width;
+
+    public double getLength() 
+    {
+        return length;
+    }
+    public void setLength(double length) 
+    {
+        this.length = length;
+    }
+    public double getWidth() 
+    {
+        return width;
+    }
+    public void setWidth(double width) 
+    {
+        this.width = width;
+    }
+    public double calculateArea() 
+    {
+        return length * width;
+    }
+}
+
+public class Main 
 {
     public static void main(String[] args) 
     {
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        int reversed = 0;
+        Scanner scanner = new Scanner(System.in);
+        Rectangle rect = new Rectangle();
 
-        while (num > 0) 
-        {
-            int digit = num % 10;
-            reversed = reversed * 10 + digit;
-            num /= 10;
-        }
+        double length = scanner.nextDouble();
+        rect.setLength(length);
+        double width = scanner.nextDouble();
+        rect.setWidth(width);
 
-        System.out.println("Reversed number: " + reversed);
+        System.out.println("Length: " + rect.getLength());
+        System.out.println("Width: " + rect.getWidth());
+
+        scanner.close();
     }
 }
 ```
 
+
 ## OUTPUT:
 
-<img width="642" height="270" alt="image" src="https://github.com/user-attachments/assets/10b2abc4-f704-4309-82f6-26e546997ae2" />
+<img width="570" height="409" alt="image" src="https://github.com/user-attachments/assets/38b436c3-1b5d-4c94-b705-93b5edb93f76" />
 
 
 ## RESULT:
-Thus, the program to write a Java program to reverse a number using a while loop is written and executed successfully.
+Thus, the program that defines a Rectangle class with private fields and public getters and setters is written and executed successfully.
 
