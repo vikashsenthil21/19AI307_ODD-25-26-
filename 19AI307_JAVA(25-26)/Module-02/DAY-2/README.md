@@ -8,9 +8,13 @@ To write a Java program that defines a method displayMessage() to print a welcom
 
 ## ALGORITHM :
 1.Start the program.
+
 2.Create a class containing the method displayMessage() that prints "Welcome to Java Methods!".
+
 3.In the main() method, create an object of the class.
+
 4.Call the displayMessage() method using the object.
+
 5.End the program.
 
 
@@ -49,3 +53,4 @@ public class Message {
 
 ## RESULT:
 The program successfully prints "Welcome to Java Methods!" by calling the user-defined method.
+
