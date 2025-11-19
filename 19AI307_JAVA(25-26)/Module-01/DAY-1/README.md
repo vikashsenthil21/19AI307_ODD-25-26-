@@ -21,7 +21,6 @@ To write a java program to get name from the user (String) and print it.
 ## PROGRAM:
 
 ```
-Program to implement variables and Operators using Java
 Developed by: Vikash S
 RegisterNumber: 212222240115
 
@@ -45,4 +44,5 @@ public class Main
 
 ## RESULT:
 Thus, the program get name from the user (String) and print is written and executed successfully.
+
 
