@@ -54,3 +54,4 @@ public class Message {
 ## RESULT:
 The program successfully prints "Welcome to Java Methods!" by calling the user-defined method.
 
+
