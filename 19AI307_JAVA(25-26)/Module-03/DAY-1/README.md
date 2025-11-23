@@ -3,29 +3,63 @@
 ## QUESTION:
 A jewelry store tracks gold rates for different types of customers. The base class is Customer with attributes like customerId, name, and purchaseWeight (in grams). There are two types of customers: RegularCustomer and PremiumCustomer. RegularCustomer gets a fixed discount of 2% on the gold rate per gram. PremiumCustomer gets a 5% discount plus a special cashback. The base gold rate per gram is input at runtime. For each customer, calculate the final price they pay:
 
+       
+       
+      finalPrice = purchaseWeight * (goldRatePerGram - discount)
+
+
+For PremiumCustomer, additionally show cashback amount (which is 1% of the final price).
+
 ## AIM:
-To write a Java program demonstrating Inheritance and Aggregation by creating subclasses for different customer types and applying different pricing policies using inheritance.
+To build an inheritance-based Java program that calculates the final price of gold for different types of customers (Regular and Premium), applying respective discounts and showing cashback for premium customers.
 
 ## ALGORITHM :
-1.	Start the program.
-2.	Import the necessary package 'java.util'
-3.	Create a base class Customer with attributes customerId, name, and purchaseWeight.
-4. Create two derived classes: RegularCustomer and PremiumCustomer extending Customer.
-5. Implement a method in both subclasses to calculate the final price after discounts.
-6. Input base gold rate per gram using Scanner in the main method.
-7. Create customer objects and calculate final price.
-8. Display results.
-9. Stop the program.
+1. Create a base class Customer with attributes: customerId, name, purchaseWeight, and goldRatePerGram.
+
+2. Create method getDiscountRate() in base class returning 0 (default).
+
+3. Create method calculateFinalPrice() that:
+
+        calculates discount per gram → discountAmount = goldRatePerGram * (discountRate/100)
+
+        calculates effective rate → effectiveRate = goldRatePerGram - discountAmount
+
+  returns → finalPrice = purchaseWeight * effectiveRate
+
+4. Override display() in base class to show general customer details.
+
+5. Create child class RegularCustomer:
+
+       Override getDiscountRate() to return 2%.
+
+       Override display() to show customer type as Regular.
+
+6. Create child class PremiumCustomer:
+
+       Override getDiscountRate() to return 5%.
+
+7.  Add calculateCashback() → returns 1% of final price.
+
+8.  Override display() to show final price + cashback.
+
+9.  Call display() to show the complete bill with discounts.
+
+
+
+
 
 ## PROGRAM:
  ```
-Developed by:Vikash s
-RegisterNumber:212222240115
+/*
+Program to implement a Inheritance and Aggregation using Java
+Developed by: Vikash s
+Register Number:212222240115
+*/
 ```
 
 ## SOURCE CODE:
 ```
-import java.util.*;
+import java.util.Scanner;
 import java.text.DecimalFormat;
 
 class Customer {
@@ -56,19 +90,21 @@ class Customer {
         System.out.println("Customer Type: General");
         System.out.println("Purchase Weight: " + purchaseWeight + " grams");
         System.out.println("Gold Rate per Gram: " + goldRatePerGram);
-        System.out.println("Discount: " + (int)getDiscountRate() + "%");
+        System.out.println("Discount: " + getDiscountRate() + "%");
         System.out.println("Final Price: " + df.format(calculateFinalPrice()));
+        
     }
 }
 
 class RegularCustomer extends Customer {
+
     RegularCustomer(String customerId, String name, double purchaseWeight, double goldRatePerGram) {
         super(customerId, name, purchaseWeight, goldRatePerGram);
     }
 
     @Override
     double getDiscountRate() {
-        return 2;
+        return 2.0;
     }
 
     @Override
@@ -79,19 +115,21 @@ class RegularCustomer extends Customer {
         System.out.println("Customer Type: Regular");
         System.out.println("Purchase Weight: " + purchaseWeight + " grams");
         System.out.println("Gold Rate per Gram: " + goldRatePerGram);
-        System.out.println("Discount: " + (int)getDiscountRate() + "%");
+        System.out.println("Discount: 2%");
         System.out.println("Final Price: " + df.format(calculateFinalPrice()));
+       
     }
 }
 
 class PremiumCustomer extends Customer {
+
     PremiumCustomer(String customerId, String name, double purchaseWeight, double goldRatePerGram) {
         super(customerId, name, purchaseWeight, goldRatePerGram);
     }
 
     @Override
     double getDiscountRate() {
-        return 5;
+        return 5.0;
     }
 
     double calculateCashback() {
@@ -106,37 +144,47 @@ class PremiumCustomer extends Customer {
         System.out.println("Customer Type: Premium");
         System.out.println("Purchase Weight: " + purchaseWeight + " grams");
         System.out.println("Gold Rate per Gram: " + goldRatePerGram);
-        System.out.println("Discount: " + (int)getDiscountRate() + "%");
+        System.out.println("Discount: 5%");
         System.out.println("Final Price: " + df.format(calculateFinalPrice()));
         System.out.println("Cashback: " + df.format(calculateCashback()));
+        
     }
 }
 
-public class Main {
+public class GoldRateSystem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String type = sc.nextLine().trim();
-        String id = sc.nextLine().trim();
-        String name = sc.nextLine().trim();
-        double weight = sc.nextDouble();
-        double goldRate = sc.nextDouble();
+        // Input 1
+        String type1 = sc.next();
+        Customer cust1;
+        if (type1.equalsIgnoreCase("Regular")) {
+            cust1 = new RegularCustomer(sc.next(), sc.next(), sc.nextDouble(), sc.nextDouble());
+        } else {
+            cust1 = new PremiumCustomer(sc.next(), sc.next(), sc.nextDouble(), sc.nextDouble());
+        }
 
-        Customer c;
-        if (type.equalsIgnoreCase("Regular"))
-            c = new RegularCustomer(id, name, weight, goldRate);
-        else
-            c = new PremiumCustomer(id, name, weight, goldRate);
+        
+        cust1.display();
+     
 
-        c.display();
+        sc.close();
     }
 }
 ```
+
+
+
+
 ## OUTPUT:
-![java31](https://github.com/ABINAYA-27-76/19AI307_ODD-25-26-/blob/14dc8b0a86e753d5e3ad7f7ea47059065871c1c7/19AI307_JAVA(25-26)/Module-03/DAY-1/java31.png)
+<img width="884" height="700" alt="image" src="https://github.com/user-attachments/assets/bc4bc233-2418-404a-88cc-490c1d83bc24" />
+
 
 
 ## RESULT:
-Thus, the Java program demonstrating Inheritance and Aggregation using customer types with different discount calculations was successfully executed.
+Therefore the program successfully applies different discount rules for regular and premium customers.
+
+
+
 
 
